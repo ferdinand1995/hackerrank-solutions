@@ -10,8 +10,16 @@ import Foundation
  */
 
 func countingValleys(steps: Int, path: String) -> Int {
-    return steps
-
+    // var result = Int()
+    var count = Int()
+    for item in path {
+        if item.lowercased() == "u" {
+            count += 1
+        } else if item.lowercased() == "d" {
+            count -= 1
+        }
+    }
+    return (count == 0) ? 1 : count
 }
  
-print("Result: \(countingValleys(steps: 8, path: "UDDDUDUU"))")
+print("Result: \(countingValleys(steps: 12, path: "DDUUDDUDUUUD"))")
