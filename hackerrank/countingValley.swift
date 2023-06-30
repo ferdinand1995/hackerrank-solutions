@@ -10,16 +10,19 @@ import Foundation
  */
 
 func countingValleys(steps: Int, path: String) -> Int {
-    // var result = Int()
-    var count = Int()
-    for item in path {
-        if item.lowercased() == "u" {
-            count += 1
-        } else if item.lowercased() == "d" {
-            count -= 1
+    var res = 0
+    var level = 0
+    for c in path {
+        if c == "U" {
+            level += 1
+            if level == 0 {
+                res += 1 
+            }
+        } else {
+            level -= 1
         }
     }
-    return (count == 0) ? 1 : count
+    return res
 }
  
 print("Result: \(countingValleys(steps: 12, path: "DDUUDDUDUUUD"))")

@@ -10,7 +10,7 @@ import Foundation
  */
 
 func pageCount(n: Int, p: Int) -> Int {
-    return 1
+    return min(p/2, n/2-p/2)
 }
 
-print(pageCount(n: 6, p: 2))
+print(pageCount(n: 37455, p: 29835))
